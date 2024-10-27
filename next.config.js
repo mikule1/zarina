@@ -4,9 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: './', // Добавьте эту строку
-  basePath: '',      // Очистите basePath
-  trailingSlash: true // Добавьте эту строку
+  basePath: '/zarina', // Добавьте это, так как ваш сайт находится по /zarina/
+  assetPrefix: './',
+  trailingSlash: true
 }
 
 module.exports = nextConfig
