@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MobileMenu } from '../components/MobileMenu'
-import { LanguageSelector } from '../components/LanguageSelector'
 import { ThemeToggle } from '../components/ThemeToggle'
 import Portfolio from '../components/Portfolio'
 import { ShoppingCart, BookOpen, Target } from 'lucide-react'
@@ -36,14 +35,12 @@ export default function Home() {
                 ))}
               </nav>
               <div className="flex items-center space-x-3 pl-8 border-l border-gray-200 dark:border-gray-700">
-                <LanguageSelector />
                 <ThemeToggle />
               </div>
             </div>
 
             <div className="flex md:hidden items-center">
               <div className="flex items-center space-x-2 mr-4">
-                <LanguageSelector />
                 <ThemeToggle />
               </div>
               <MobileMenu />

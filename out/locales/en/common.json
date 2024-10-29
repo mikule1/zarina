@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "career": "Career",
+    "projects": "Projects",
+    "expertise": "Expertise",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Marketing and Brand Strategist",
+    "subtitle": "10+ years of experience",
+    "description": "Hello! Welcome to my page! I'm Zarina, a marketer with more than 10 years of experience in sales and promotion.",
+    "cta": "Get in Touch"
+  },
+  "career": {
+    "title": "Career Journey",
+    "blocks": {
+      "start": {
+        "title": "Career Start",
+        "text": "Opening and promoting a women's clothing store from scratch"
+      },
+      "education": {
+        "title": "Education",
+        "text": "Marketing education at Most Business School"
+      },
+      "current": {
+        "title": "Current Activity",
+        "text": "Developing own projects and business consulting"
+      }
+    }
+  },
+  "projects": {
+    "title": "Key Projects",
+    "items": {
+      "kids": {
+        "title": "Children's Products Brand",
+        "description": "Concept development, promotion strategy, content creation and advertising management for own brand of children's tableware and educational toys."
+      },
+      "confectionery": {
+        "title": "Confectionery Business",
+        "description": "Profile design and advertising campaign setup to attract customers to the confectionery business."
+      },
+      "guesthouse": {
+        "title": "Guest House",
+        "description": "Creating attractive content and conducting advertising campaigns to increase audience reach."
+      }
+    }
+  },
+  "expertise": {
+    "title": "Expertise",
+    "description": "I regularly follow marketing trends, which allows me to offer relevant and effective solutions.",
+    "marketing": {
+      "title": "Marketing Strategies",
+      "items": [
+        "Promotion strategy development",
+        "Target audience analysis",
+        "Brand positioning"
+      ]
+    },
+    "social": {
+      "title": "Social Media",
+      "items": [
+        "Content plan creation",
+        "Targeted advertising setup",
+        "Profile design"
+      ]
+    },
+    "analytics": {
+      "title": "Analytics",
+      "items": [
+        "Campaign effectiveness analysis",
+        "KPI tracking",
+        "Campaign optimization"
+      ]
+    }
+  },
+  "services": {
+    "title": "Services",
+    "strategic": {
+      "title": "Strategic Marketing",
+      "items": [
+        "Marketing strategy development",
+        "Competitor analysis",
+        "Brand positioning"
+      ]
+    },
+    "social": {
+      "title": "Social Media Promotion",
+      "items": [
+        "Content strategy creation",
+        "Ad campaign setup and management",
+        "Account design and management"
+      ]
+    },
+    "consulting": {
+      "title": "Consulting",
+      "items": [
+        "Current marketing audit",
+        "Development recommendations",
+        "Team training"
+      ]
+    },
+    "analytics": {
+      "title": "Analytics and Reporting",
+      "items": [
+        "Analytics systems setup",
+        "KPI tracking",
+        "Monthly reports"
+      ]
+    }
+  },
+  "achievements": {
+    "title": "Achievements",
+    "projects": "Successful Projects",
+    "sales": "Average Sales Growth",
+    "budget": "Advertising Budget",
+    "niches": "Different Niches"
+  },
+  "cta": {
+    "title": "Ready to take your business to the next level?",
+    "description": "I look forward to collaborating and supporting your promotion!",
+    "button": "Discuss Project"
+  },
+  "theme": {
+    "dark": "Dark Theme",
+    "light": "Light Theme"
+  },
+  "language": "Language"
+}
