@@ -5,17 +5,17 @@ const Portfolio = () => {
     {
       title: "Children's Products Brand",
       description: "Concept development, promotion strategy, content creation and advertising management for own brand of children's tableware and educational toys.",
-      image: "/images/2.jpg"
+      image: "/zarina/images/2.jpg"
     },
     {
       title: "Confectionery Business",
       description: "Profile design and advertising campaign setup to attract customers to the confectionery business.",
-      image: "/images/3.jpg"
+      image: "/zarina/images/3.jpg"
     },
     {
       title: "Guest House",
       description: "Creating attractive content and conducting advertising campaigns to increase audience reach.",
-      image: "/images/4.jpg"
+      image: "/zarina/images/4.jpg"
     }
   ];
 

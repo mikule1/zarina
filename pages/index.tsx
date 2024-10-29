@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="relative flex justify-center">
                   <div className="aspect-square rounded-full overflow-hidden w-full md:w-[85%]">
                     <Image
-                      src="/images/1.jpg"
+                      src="/zarina/images/1.jpg"
                       alt="Zarina"
                       width={500}
                       height={500}
