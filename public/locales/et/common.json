@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Avaleht",
+    "career": "Karjäär",
+    "projects": "Projektid",
+    "expertise": "Ekspertiis",
+    "services": "Teenused",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Turundus- ja Brändistrateegia Ekspert",
+    "subtitle": "10+ aastat kogemust",
+    "description": "Tere! Tere tulemast minu lehele! Olen Zarina, turundaja rohkem kui 10-aastase müügi- ja promotsioonikogemusega.",
+    "cta": "Võta ühendust"
+  },
+  "career": {
+    "title": "Karjääritee",
+    "blocks": {
+      "start": {
+        "title": "Karjääri Algus",
+        "text": "Naiste rõivakaupluse avamine ja edendamine nullist"
+      },
+      "education": {
+        "title": "Haridus",
+        "text": "Turundusõpe Most Business School'is"
+      },
+      "current": {
+        "title": "Praegune Tegevus",
+        "text": "Oma projektide arendamine ja ärikonsultatsioonid"
+      }
+    }
+  },
+  "projects": {
+    "title": "Põhiprojektid",
+    "items": {
+      "kids": {
+        "title": "Lastetoodete Bränd",
+        "description": "Kontseptsiooni arendamine, promotsioonistrateegia, sisu loomine ja reklaamihaldus oma laste lauanõude ja hariduslike mänguasjade brändile."
+      },
+      "confectionery": {
+        "title": "Kondiitritoodete Äri",
+        "description": "Profiili kujundamine ja reklaamikampaaniate seadistamine kondiitriäri klientide meelitamiseks."
+      },
+      "guesthouse": {
+        "title": "Külalistemaja",
+        "description": "Atraktiivse sisu loomine ja reklaamikampaaniate läbiviimine publiku ulatuse suurendamiseks."
+      }
+    }
+  },
+  "expertise": {
+    "title": "Ekspertiis",
+    "description": "Jälgin regulaarselt turundustrende, mis võimaldab mul pakkuda asjakohaseid ja tõhusaid lahendusi.",
+    "marketing": {
+      "title": "Turundusstrateegiad",
+      "items": [
+        "Promotsioonistrateegia arendamine",
+        "Sihtgrupi analüüs",
+        "Brändi positsioneerimine"
+      ]
+    },
+    "social": {
+      "title": "Sotsiaalmeedia",
+      "items": [
+        "Sisuplaani loomine",
+        "Suunatud reklaami seadistamine",
+        "Profiili kujundamine"
+      ]
+    },
+    "analytics": {
+      "title": "Analüütika",
+      "items": [
+        "Kampaania tõhususe analüüs",
+        "KPI jälgimine",
+        "Kampaaniate optimeerimine"
+      ]
+    }
+  },
+  "services": {
+    "title": "Teenused",
+    "strategic": {
+      "title": "Strateegiline Turundus",
+      "items": [
+        "Turundusstrateegia arendamine",
+        "Konkurentide analüüs",
+        "Brändi positsioneerimine"
+      ]
+    },
+    "social": {
+      "title": "Sotsiaalmeedia Promotsioon",
+      "items": [
+        "Sisustrateegia loomine",
+        "Reklaamikampaaniate seadistamine ja haldamine",
+        "Kontode kujundamine ja haldamine"
+      ]
+    },
+    "consulting": {
+      "title": "Konsultatsioon",
+      "items": [
+        "Praeguse turunduse audit",
+        "Arengusoovitused",
+        "Meeskonna koolitamine"
+      ]
+    },
+    "analytics": {
+      "title": "Analüütika ja Aruandlus",
+      "items": [
+        "Analüütikasüsteemide seadistamine",
+        "KPI jälgimine",
+        "Igakuised aruanded"
+      ]
+    }
+  },
+  "achievements": {
+    "title": "Saavutused",
+    "projects": "Edukaid Projekte",
+    "sales": "Keskmine Müügikasv",
+    "budget": "Reklaamieelarve",
+    "niches": "Erinevat Valdkonda"
+  },
+  "cta": {
+    "title": "Valmis oma äri järgmisele tasemele viima?",
+    "description": "Ootan koostööd ja võimalust teie promotsiooni toetada!",
+    "button": "Aruta Projekti"
+  },
+  "theme": {
+    "dark": "Tume Teema",
+    "light": "Hele Teema"
+  },
+  "language": "Keel"
+}

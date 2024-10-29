@@ -1,12 +1,12 @@
+const { i18n } = require('./next-i18next.config')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n,
   output: 'export',
-  images: {
-    unoptimized: true
-  },
-  basePath: '/zarina', // Добавьте это, так как ваш сайт находится по /zarina/
-  assetPrefix: './',
-  trailingSlash: true
+  images: { unoptimized: true },
+  basePath: '/zarina',
+  assetPrefix: '/zarina/',
 }
 
 module.exports = nextConfig
