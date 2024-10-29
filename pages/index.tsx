@@ -3,11 +3,40 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MobileMenu } from '../components/MobileMenu'
 import { ThemeToggle } from '../components/ThemeToggle'
+import { LanguageSelector } from '../components/LanguageSelector'
 import Portfolio from '../components/Portfolio'
 import { getImagePath } from '../utils/paths'
 import { ShoppingCart, BookOpen, Target } from 'lucide-react'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 export default function Home() {
+  const { t } = useTranslation('common')
+
+  // Define the items for expertise section
+  const expertiseItems = {
+    marketing: ['Разработка стратегии продвижения', 'Анализ целевой аудитории', 'Позиционирование бренда'],
+    social: ['Создание контент-плана', 'Настройка таргетированной рекламы', 'Оформление профилей'],
+    analytics: ['Анализ эффективности кампаний', 'Отслеживание KPI', 'Оптимизация рекламных кампаний']
+  }
+
+  // Define the items for services section
+  const servicesItems = {
+    strategic: ['Разработка маркетинговой стратегии', 'Анализ конкурентов', 'Позиционирование бренда'],
+    social: ['Создание контент-стратегии', 'Настройка и ведение рекламных кампаний', 'Оформление и ведение аккаунтов'],
+    consulting: ['Аудит текущего маркетинга', 'Рекомендации по развитию', 'Обучение команды'],
+    analytics: ['Настройка систем аналитики', 'Отслеживание KPI', 'Ежемесячные отчеты']
+  }
+
+  // Define achievements with their values
+  const achievements = [
+    { key: 'projects', value: '10+' },
+    { key: 'sales', value: '150%' },
+    { key: 'budget', value: '100K €+' },
+    { key: 'niches', value: '5+' }
+  ]
+
   return (
     <>
       <Head>
@@ -25,23 +54,25 @@ export default function Home() {
             
             <div className="hidden md:flex items-center">
               <nav className="flex items-center space-x-8 mr-8">
-                {['Home', 'Career', 'Projects', 'Expertise', 'Services', 'Contact'].map((item) => (
+                {['home', 'career', 'projects', 'expertise', 'services', 'contact'].map((item) => (
                   <Link
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     className="nav-link"
                   >
-                    {item}
+                    {t(`nav.${item}`)}
                   </Link>
                 ))}
               </nav>
               <div className="flex items-center space-x-3 pl-8 border-l border-gray-200 dark:border-gray-700">
+                <LanguageSelector />
                 <ThemeToggle />
               </div>
             </div>
 
             <div className="flex md:hidden items-center">
               <div className="flex items-center space-x-2 mr-4">
+                <LanguageSelector />
                 <ThemeToggle />
               </div>
               <MobileMenu />
@@ -54,16 +85,16 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
-                    Marketing & Business Development
+                    {t('hero.title')}
                   </h1>
                   <div className="text-xl font-semibold text-primary-600 dark:text-primary-400">
-                    Specialist in Digital Marketing
+                    {t('hero.subtitle')}
                   </div>
                   <p className="text-xl text-gray-600 dark:text-gray-300">
-                    Creating effective marketing strategies and managing successful campaigns
+                    {t('hero.description')}
                   </p>
                   <button className="btn-primary">
-                    Get in Touch
+                    {t('hero.cta')}
                   </button>
                 </div>
                 <div className="relative flex justify-center">
@@ -82,63 +113,58 @@ export default function Home() {
 
             {/* Career Journey */}
             <section id="career" className="section">
-              <h2 className="section-title">Career Journey</h2>
+              <h2 className="section-title">{t('career.title')}</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="card">
                   <ShoppingCart className="w-12 h-12 text-primary-600 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Business Start</h3>
-                  <p>Started career in retail business management and marketing</p>
+                  <h3 className="text-xl font-semibold mb-3">{t('career.blocks.start.title')}</h3>
+                  <p>{t('career.blocks.start.text')}</p>
                 </div>
                 <div className="card">
                   <BookOpen className="w-12 h-12 text-primary-600 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Education</h3>
-                  <p>Specialized in digital marketing and business development</p>
+                  <h3 className="text-xl font-semibold mb-3">{t('career.blocks.education.title')}</h3>
+                  <p>{t('career.blocks.education.text')}</p>
                 </div>
                 <div className="card">
                   <Target className="w-12 h-12 text-primary-600 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Current Focus</h3>
-                  <p>Leading marketing strategies and campaign management</p>
+                  <h3 className="text-xl font-semibold mb-3">{t('career.blocks.current.title')}</h3>
+                  <p>{t('career.blocks.current.text')}</p>
                 </div>
               </div>
             </section>
 
             {/* Key Projects */}
-            <section id="projects" className="section">
-              <Portfolio />
-            </section>
+            <Portfolio />
 
             {/* Expertise */}
             <section id="expertise" className="section">
-              <h2 className="section-title">Areas of Expertise</h2>
+              <h2 className="section-title">{t('expertise.title')}</h2>
               <p className="text-center mb-12 text-lg">
-                Comprehensive marketing and business development expertise
+                {t('expertise.description')}
               </p>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Marketing Strategy</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('expertise.marketing.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Brand Development</li>
-                    <li>Market Analysis</li>
-                    <li>Campaign Planning</li>
-                    <li>Performance Tracking</li>
+                    {expertiseItems.marketing.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Social Media</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('expertise.social.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Content Strategy</li>
-                    <li>Community Management</li>
-                    <li>Engagement Growth</li>
-                    <li>Analytics & Reporting</li>
+                    {expertiseItems.social.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Analytics</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('expertise.analytics.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Data Analysis</li>
-                    <li>Performance Metrics</li>
-                    <li>ROI Optimization</li>
-                    <li>Trend Analysis</li>
+                    {expertiseItems.analytics.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -146,42 +172,38 @@ export default function Home() {
 
             {/* Services */}
             <section id="services" className="section">
-              <h2 className="section-title">Services</h2>
+              <h2 className="section-title">{t('services.title')}</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Strategic Planning</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('services.strategic.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Marketing Strategy Development</li>
-                    <li>Brand Positioning</li>
-                    <li>Market Research</li>
-                    <li>Competitive Analysis</li>
+                    {servicesItems.strategic.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Social Media Management</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('services.social.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Content Creation</li>
-                    <li>Community Management</li>
-                    <li>Campaign Execution</li>
-                    <li>Performance Analysis</li>
+                    {servicesItems.social.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Business Consulting</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('services.consulting.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Business Development</li>
-                    <li>Growth Strategy</li>
-                    <li>Process Optimization</li>
-                    <li>Performance Improvement</li>
+                    {servicesItems.consulting.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="card">
-                  <h3 className="text-xl font-semibold mb-4">Analytics & Reporting</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('services.analytics.title')}</h3>
                   <ul className="space-y-2">
-                    <li>Data Analysis</li>
-                    <li>Performance Tracking</li>
-                    <li>ROI Measurement</li>
-                    <li>Insights & Recommendations</li>
+                    {servicesItems.analytics.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -189,33 +211,25 @@ export default function Home() {
 
             {/* Achievements */}
             <section className="section bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-              <h2 className="section-title">Key Achievements</h2>
+              <h2 className="section-title">{t('achievements.title')}</h2>
               <div className="grid md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
-                  <div>Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">150%</div>
-                  <div>Average Sales Growth</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">10M+</div>
-                  <div>Marketing Budget Managed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">5+</div>
-                  <div>Industry Niches</div>
-                </div>
+                {achievements.map((achievement) => (
+                  <div key={achievement.key} className="text-center">
+                    <div className="text-3xl font-bold text-primary-600 mb-2">
+                      {achievement.value}
+                    </div>
+                    <div>{t(`achievements.${achievement.key}`)}</div>
+                  </div>
+                ))}
               </div>
             </section>
 
             {/* CTA Section */}
             <section className="section text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Grow Your Business?</h2>
-              <p className="text-xl mb-8">Let's discuss how I can help you achieve your goals</p>
+              <h2 className="text-3xl font-bold mb-4">{t('cta.title')}</h2>
+              <p className="text-xl mb-8">{t('cta.description')}</p>
               <button className="btn-primary">
-                Contact Me
+                {t('cta.button')}
               </button>
             </section>
           </main>
@@ -223,7 +237,7 @@ export default function Home() {
           <footer className="py-8 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-600 dark:text-gray-300">
-                © {new Date().getFullYear()} Zarina. All rights reserved.
+                © {new Date().getFullYear()} Zarina
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" className="nav-link">Instagram</a>
@@ -235,4 +249,12 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'ru', ['common'])),
+    },
+  }
 }
