@@ -8,6 +8,7 @@ const nextConfig = {
   },
   basePath: '/zarina',
   assetPrefix: '/zarina/',
+  distDir: 'out',
 }
 
 module.exports = nextConfig

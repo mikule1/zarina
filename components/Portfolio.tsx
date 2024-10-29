@@ -12,17 +12,17 @@ const Portfolio = () => {
     {
       title: "Children's Products Brand",
       description: "Concept development, promotion strategy, content creation and advertising management for own brand of children's tableware and educational toys.",
-      image: "/images/2.jpg"  // без /zarina
+      image: "/images/2.jpg"
     },
     {
       title: "Confectionery Business",
       description: "Profile design and advertising campaign setup to attract customers to the confectionery business.",
-      image: "/images/3.jpg"  // без /zarina
+      image: "/images/3.jpg"
     },
     {
       title: "Guest House",
       description: "Creating attractive content and conducting advertising campaigns to increase audience reach.",
-      image: "/images/4.jpg"  // без /zarina
+      image: "/images/4.jpg"
     }
   ]
 
@@ -37,7 +37,7 @@ const Portfolio = () => {
           >
             <div className="relative h-48 w-full mb-4">
               <Image
-                src={getImagePath(project.image)}  // используем утилиту getImagePath
+                src={getImagePath(project.image)}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
