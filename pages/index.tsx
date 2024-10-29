@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { MobileMenu } from '../components/MobileMenu'
 import { ThemeToggle } from '../components/ThemeToggle'
 import Portfolio from '../components/Portfolio'
+import { getImagePath } from '../utils/paths'
 import { ShoppingCart, BookOpen, Target } from 'lucide-react'
 
 export default function Home() {
@@ -68,7 +69,7 @@ export default function Home() {
                 <div className="relative flex justify-center">
                   <div className="aspect-square rounded-full overflow-hidden w-full md:w-[85%]">
                     <Image
-                      src="/zarina/images/1.jpg"
+                      src={getImagePath("/images/1.jpg")}
                       alt="Zarina"
                       width={500}
                       height={500}
