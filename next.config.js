@@ -1,10 +1,8 @@
+const { i18n } = require('./next-i18next.config')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-<<<<<<< HEAD
-  output: 'export',
-=======
   i18n,
->>>>>>> restore-branch
   images: { unoptimized: true },
   basePath: '',
   assetPrefix: '',
