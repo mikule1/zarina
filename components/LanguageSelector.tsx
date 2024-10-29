@@ -1,20 +1,20 @@
 import { useState, useRef, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { ChevronDown } from 'lucide-react'
+import { useTranslation } from '../context/LanguageContext'
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'et', name: 'Eesti', flag: '🇪🇪' },
   { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'es', name: 'Español', flag: '🇪🇸' }
-]
+] as const
 
 export function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
+  const { language, setLanguage } = useTranslation()
 
-  const currentLanguage = languages.find(lang => lang.code === router.locale) || languages[0]
+  const currentLanguage = languages.find(lang => lang.code === language) || languages[0]
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -27,8 +27,8 @@ export function LanguageSelector() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const changeLanguage = (locale: string) => {
-    router.push(router.pathname, router.asPath, { locale })
+  const changeLanguage = (locale: typeof languages[number]['code']) => {
+    setLanguage(locale)
     setIsOpen(false)
   }
 
@@ -52,20 +52,20 @@ export function LanguageSelector() {
 
       {isOpen && (
         <div className="absolute left-0 md:right-0 md:left-auto mt-2 w-48 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
-          {languages.map((language) => (
+          {languages.map((lang) => (
             <button
-              key={language.code}
-              onClick={() => changeLanguage(language.code)}
+              key={lang.code}
+              onClick={() => changeLanguage(lang.code)}
               className={`flex w-full items-center space-x-3 px-4 py-3 text-left text-sm transition-colors ${
-                router.locale === language.code
+                language === lang.code
                   ? 'bg-primary-50 text-primary-600 dark:bg-primary-900/50 dark:text-primary-400'
                   : 'text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700'
               }`}
             >
-              <span className="text-2xl" role="img" aria-label={language.name}>
-                {language.flag}
+              <span className="text-2xl" role="img" aria-label={lang.name}>
+                {lang.flag}
               </span>
-              <span className="font-medium">{language.name}</span>
+              <span className="font-medium">{lang.name}</span>
             </button>
           ))}
         </div>

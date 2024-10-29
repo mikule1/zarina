@@ -7,12 +7,10 @@ import { LanguageSelector } from '../components/LanguageSelector'
 import Portfolio from '../components/Portfolio'
 import { getImagePath } from '../utils/paths'
 import { ShoppingCart, BookOpen, Target } from 'lucide-react'
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from '../context/LanguageContext'
 
 export default function Home() {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation()
 
   // Define the items for expertise section
   const expertiseItems = {
@@ -249,12 +247,4 @@ export default function Home() {
       </div>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? 'ru', ['common'])),
-    },
-  }
 }
