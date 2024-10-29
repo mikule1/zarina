@@ -1,4 +1,3 @@
-// next-i18next.config.js
 const isProduction = process.env.NODE_ENV === 'production'
 const BASE_PATH = isProduction ? '/zarina' : ''
 
