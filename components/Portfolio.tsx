@@ -1,30 +1,27 @@
 import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
 
 const Portfolio = () => {
-  const { t } = useTranslation('common');
-
   const projects = [
     {
-      title: t('projects.items.kids.title'),
-      description: t('projects.items.kids.description'),
+      title: "Children's Products Brand",
+      description: "Concept development, promotion strategy, content creation and advertising management for own brand of children's tableware and educational toys.",
       image: "/images/2.jpg"
     },
     {
-      title: t('projects.items.confectionery.title'),
-      description: t('projects.items.confectionery.description'),
+      title: "Confectionery Business",
+      description: "Profile design and advertising campaign setup to attract customers to the confectionery business.",
       image: "/images/3.jpg"
     },
     {
-      title: t('projects.items.guesthouse.title'),
-      description: t('projects.items.guesthouse.description'),
+      title: "Guest House",
+      description: "Creating attractive content and conducting advertising campaigns to increase audience reach.",
       image: "/images/4.jpg"
     }
   ];
 
   return (
     <>
-      <h2 className="section-title">{t('projects.title')}</h2>
+      <h2 className="section-title">Key Projects</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div 
